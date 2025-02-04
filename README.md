@@ -1,20 +1,15 @@
-# Scrollama + Bootstrap Boilerplate
+# Analysis of Race and Mass Shootings in the US
 
-This is a small example of how to create scrollytelling webpage with [scrollama.js](scrollama.js)
-(for interactions) with [Bootstrap](https://getbootstrap.com/) (for styling and gridding). This is
-tiny example, with miminal functionality, commented heavily for learning purposes.
-
-## TO DO
-
-Throughout the source code as comments noted with `TODO` indicating things that are still remaining
-to be improved.
+This project examines the relationship between mass killings and the role of race in these incidents. 
+It explores various factors that provide context to this analysis and identifies overarching patterns and themes.
 
 ## Links
 
-- The project is [remixable on Glitch](https://glitch.com/edit/#!/scrollama-with-bootstrap-boilerplate)
+- The project is remixed from [remixable on Glitch](https://glitch.com/edit/#!/scrollama-with-bootstrap-boilerplate)
 - The source code [is tracked on Github](https://github.com/rahulbot/scrollama-bootstrap-boilerplate)
 - The live site is viewable [on Glitch](https://scrollama-with-bootstrap-boilerplate.glitch.me) or [Github Pages](https://rahulbot.github.io/scrollama-bootstrap-boilerplate/)
 
 ## Credits
 
 Created by Rahul Bhargava.
+Edited by Olivia Mintz and Vrnda Aiyasawmy.
