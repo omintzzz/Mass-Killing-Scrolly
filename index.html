@@ -1,0 +1,364 @@
+<!-- tell the browser this is an HTML5 file -->
+<!DOCTYPE html>
+
+<!-- all the HTML must be inside this root html tag -->
+<html lang="en">
+  <!-- give the web browser a bunch of other information about this webpage, most of it not displayed to the user -->
+  <head>
+    <!-- tell the browser how to display text -->
+    <meta charset="utf-8" />
+
+    <!-- give search engines some background info on this page -->
+    <meta
+      name="description"
+      content="Scrollama + Bootstrap Boilerplate - sample webpage to remix and build on for learners"
+    />
+    <meta
+      name="keywords"
+      content="digital storytelling, scrollytelling, learning, examples"
+    />
+    <meta
+      name="author"
+      content="Rahul Bhargava, Data Culture Group, Northeastern University"
+    />
+
+    <!-- tell the browser to render differently on mobile devices than in browsers on desktop machines -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- text that shows up in the browser tab -->
+    <title>Mass Killings In The US</title>
+
+    <!-- INCLUDE CSS FILES -->
+    <!-- pull in the bootstrap CSS files from the 3rd party CDN they are hosted on -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- pull in our own CSS rules -->
+    <link rel="stylesheet" href="project.css" type="text/css" charset="utf-8" />
+
+    <!-- INCLUDE JS FILES -->
+    <!-- pull in the Scrollama javscript package from the CDN hosting them -->
+    <script src="https://unpkg.com/scrollama"></script>
+    <!-- pull in scripts we wrote for this example -->
+    <script src="project.js"></script>
+  </head>
+
+  <!-- the body for the content the user is shown within a browser window -->
+  <body>
+    <!-- the header has a title and indication to the user that they should scroll -->
+    <header>
+      <div class="container">
+        <!-- tell bootstrap we're going to use a grid -->
+        <div class="row">
+          <!-- a horizontal set of content -->
+          <div class="col-lg-6 offset-lg-3">
+            <!-- half-width & centered on desktop/tablet, full width on mobile -->
+            <h1>Analysis of Race and Mass Shootings in the US</h1>
+            <p>
+              An analysis of how the racial identities of victims and perpetrators are affected by mass killings. 
+            </p>
+            <p>
+              The Mass Killings database, from the Associated Press, USA Today,
+              and Northeastern University features data of killings from
+              2006-2025. A mass killing is described as involving four or more
+              people killed in an incident.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- the main section has the body of the story -->
+    <main>
+      <section id="scrolly">
+        <!-- there is only one of these, so give it an `id` instead of a `class` attribute -->
+
+        <article>
+          <!-- a helpful tag to note content that is not related to the background site styling -->
+
+          <!-- API CONTAINER -->
+
+          <div class="step" data-step="1">
+            <div class="api-container">
+              <div class="api-stat">
+                <h2 id="total-incidents">613</h2>
+                <p>Total Incidents</p>
+              </div>
+              <div class="api-stat">
+                <h2 id="total-victims-killed">3,166</h2>
+                <p>Total Victims Killed</p>
+              </div>
+              <div class="api-stat">
+                <h2 id="total-victims-injured">2,139</h2>
+                <p>Total Victims Injured</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Overall Killing -->
+
+          <div class="step" data-step="2">
+            <h2>Overall Trend of Mass Killings Over the Years</h2>
+            <p>
+              This graph shows the number of mass killings each year that have
+              been included in the database.
+            </p>
+            <p>
+              <span class="highlight-text">2019</span> had the highest number of
+              killings, which was <span class="highlight-text">46</span>.
+              <span class="highlight-text">2025</span> had only
+              <span class="highlight-text">1</span> mass killing, which was on
+              January 1.
+            </p>
+
+            <div class="overall-killings-container">
+              <div
+                class="flourish-embed flourish-chart"
+                data-src="visualisation/21342520"
+              >
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+                <noscript>
+                  <img
+                    src="https://public.flourish.studio/visualisation/21342520/thumbnail"
+                    width="100%"
+                    alt="chart visualization"
+                  />
+                </noscript>
+              </div>
+            </div>
+          </div>
+
+          <!-- FLOURISH GEOGRAPHIC MAP -->
+
+          <div class="step" data-step="3">
+            <div class="geographic-container">
+              <h2>Geographic Overview of the Mass Killings</h2>
+              <p>
+                This map shows the locations of mass killings across the US.
+                Each circle represents an incident, with larger circles
+                indicating higher casualties.
+              </p>
+
+              <p>
+                The data allows us to understand patterns of the locations for
+                each mass killing incident along with the number of victims and
+                their races.
+              </p>
+
+              <p>
+                Out of the mass killings included in this database,
+                <span class="highlight-text">12</span> were motivated by
+                <span class="highlight-text"> hate </span>. From these
+                hate-based killings, half targeted specific races. The
+                <span class="highlight-text">most lethal attack </span> was
+                located in
+                <span class="highlight-text"> El Paso, Texas,</span> where the
+                <span class="highlight-text"> majority of the victims</span>
+                were identified as
+                <span class="highlight-text"> Hispanic/Latino. </span>
+              </p>
+
+              <p>
+                <span class="highlight-text"
+                  >The <strong>largest</strong> mass killing recorded</span
+                >
+                was in <strong>Las Vegas, Nevada, in 2017</strong>, where
+                <strong>60</strong> people were <strong>killed</strong> and
+                <strong>867</strong> were <strong>injured</strong>.
+              </p>
+            </div>
+
+            <div class="map-container">
+              <iframe
+                src="https://flo.uri.sh/visualisation/21327769/embed"
+                title="Interactive or visual content"
+                class="flourish-embed-iframe"
+                frameborder="0"
+                scrolling="no"
+                style="width: 100%; height: 600px"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Step 4: Race of Offender & Victim -->
+
+          <div class="step" data-step="4">
+            <h2>Race of Offenders and Victims</h2>
+            <div class="race-offender-victim-container">
+              <p>
+                Are the mass killings in the U.S. disproportionately impact
+                certain racial groups?
+              </p>
+
+              <p>
+                The graphs below tries to understand the distribution of
+                offenders and victims, revealing racial patterns in these
+                incidents.
+              </p>
+
+              <!-- Offender by Race (Chart Right, Text Left) -->
+              <div class="race-visual offender-visual">
+                <div class="race-text-box offender-text">
+                  <p>
+                    The graphs highlight racial disparities in mass killings.</p>
+                    <p>
+                      <span class="highlight-text">    White offenders (291) </span>
+                  </p>
+                  <p>
+                    <span class="highlight-text">Black (251) </span>, and 
+                    <p>
+                      <span class="highlight-text"> Hispanic/Latino(115) </span>
+                  </p> 
+                  <p> make up most perpetrators </p>
+                  </p>
+                </div>
+                <div class="race-chart-box offender-chart">
+                  <img
+                    src="https://cdn.glitch.global/7a1d95e5-ddf7-41bd-966c-6c667ca65d01/output%20(4).png?v=1738623769119"
+                    alt="Offender by Race"
+                    class="race-chart-img"
+                  />
+                </div>
+              </div>
+
+              <!-- Victim by Race (Chart Left, Text Right) -->
+              <div class="race-visual victim-visual">
+                <div class="race-chart-box victim-chart">
+                  <img
+                    src="https://cdn.glitch.global/7a1d95e5-ddf7-41bd-966c-6c667ca65d01/output%20(3).png?v=1738623753092"
+                    alt="Victim by Race"
+                    class="race-chart-img"
+                  />
+                </div>
+                <div class="race-text-box victim-text">
+                  <p>
+                    Victims data follows a similar trend, with 
+                    <p>
+                      <span class="highlight-text"> White (1,344) </span>
+                  </p>, 
+                  <p> 
+                    <span class="highlight-text"> Black(672) </span>,
+                  </p> and 
+                  <p> 
+                    <span class="highlight-text"> Hispanic/Latino (501) </span>
+                  </p> being the most affected
+                    groups.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ste 5 - race x offender x victim comparison-->
+
+          <div class="step" data-step="5">
+            <h2>Overall Killings by Race</h2>
+            <p>
+              For all races, there were more victims than offenders. According
+              to Professor James Fox, a key contributor to this database, “The
+              overall majority of mass killings were not interracial or race
+              motivated and the press, as you know, don't print race so it's
+              hard to find.”
+            </p>
+            <p>
+              When discussing how the race of victims and offenders was
+              gathered, it was not as simple as looking at these individuals.
+              “When I first started on this project, we started collecting race
+              based on names and photographs and then the AP said you can't do
+              that AP rules say you can't get race based on photographs and
+              names can be misleading,” said Fox.
+            </p>
+
+            <div class="overall-killings-race-container">
+              <div
+                class="flourish-embed flourish-chart"
+                data-src="visualisation/21291092"
+              >
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+                <noscript>
+                  <img
+                    src="https://public.flourish.studio/visualisation/21291092/thumbnail"
+                    width="100%"
+                    alt="chart visualization"
+                  />
+
+                  <!-- text section -->
+                  <div class="overall-killings-text"></div>
+                </noscript>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 6: Offender Outcome by Race -->
+          <div class="step" data-step="6">
+            <h2>Offender Outcome by Race</h2>
+            <p>
+              Analyzing the outcomes of mass killing offenders based on race.
+            </p>
+            <div class="offender-outcome-wrapper">
+              <!-- Offender Outcome Chart -->
+              <div class="offender-outcome-container">
+                <div class="race-chart-box offender-chart">
+                  <img
+                    src="https://cdn.glitch.global/7a1d95e5-ddf7-41bd-966c-6c667ca65d01/Screenshot%202025-01-28%20at%207.53.02%E2%80%AFAM.png?v=1738283188164"
+                    alt="Offender by Race"
+                    class="race-chart-img"
+                  />
+                </div>
+              </div>
+
+              <!-- Offender Outcome Summary (Appears on Scroll) -->
+              <div class="offender-outcome-text">
+                <p>
+                  In most mass killings, offenders have different outcomes based
+                  on race. The data shows disparities in arrests, suicides, and
+                  police confrontations.
+                </p>
+              </div>
+            </div>
+          </div>
+      
+      <!-- Step 7: Conclusion -->
+<div class="step" data-step="7">
+    <h2>Conclusion</h2>
+    <p class="conclusion-text">
+        From examining the dataset, and discussing further with Professor Fox he determined that
+      "One contrary to the public perception is that this [mass killings] is not an epidemic and, 
+      in fact, not even increasing over the past 20 years" This is because population is about 50% 
+      larger than it was in the earlier 80s, when he began researching mass killings.
+      "But back in 2006, when the data began, there really hasn’t been much of a change. 
+      There has been about an 11% increase in population."
+
+
+    </p>
+    <p class="conclusion-text">
+        Fox also believes that from his research, mass killings are rarely indiscriminate; in most cases,
+      offenders specifically target people they know for personal reasons.
+     Most of the cases in this dataset do not involve race or are hate-based as about 45% of 
+    cases are within families and 25% are gang or drug-related. “It is important that when we report the data, 
+      we distinguish the kind of cases that worry people”.
+
+    </p>
+</div>
+
+        </article>
+      </section>
+    </main>
+
+    <script type="text/javascript">
+      // initialize the interaction here, because the body content has been loaded
+      // and we can access it
+      Project.scrolling.initialize();
+    </script>
+
+    <script type="text/javascript">
+      // This is a placeholder where you would want to add in any JS code you get
+      // from an analytics tracker. It is _not_ included in the head tag because you
+      // don't want it to slow down page content loading.
+    </script>
+  </body>
+</html>

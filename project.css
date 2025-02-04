@@ -1,0 +1,663 @@
+/**
+ * CSS Variables: Define brand colors and fonts in one place
+ */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #0D1821;
+  --color-primary: #0D1821;
+  --color-secondary: #0088cc;
+  --font-family-body: "Avenir", sans-serif;
+  --font-family-header: "Canela", serif;
+}
+
+/* Basic Page Styles */
+body {
+  font-family: var(--font-family-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: var(--color-primary);
+  font-family: var(--font-family-header);
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2,
+h3 {
+  font-family: var(--font-family-header);
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* Links */
+a,
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  padding: 2rem;
+}
+
+header p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+/* Main Article & Scrollytelling */
+article {
+  position: relative;
+  margin: 0 auto;
+  width: 100vw; /* Ensures it takes full screen width */
+  max-width: 100vw;
+}
+
+/* Scrollytelling Step Transitions */
+.step {
+  padding: 2rem 0;
+  min-height: 90vh;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   margin-top: -5rem;
+}
+
+.highlight-number {
+  font-weight: bold;
+}
+
+/* API Stats Container */
+.api-container {
+  background: #B4CDED;
+  display: flex;               /* Enable Flexbox */
+  flex-direction: row;         /* Align items horizontally */
+  justify-content: center;     /* Center items horizontally */
+  align-items: center;         /* Align items vertically */
+  gap: 1rem;                   /* Space between stats */
+  padding: 1rem;
+  margin-top: -10rem;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto/* Prevent wrapping */
+}
+
+
+/* Individual Stat Block */
+.api-stat {
+  text-align: center;
+  min-width: 200px;            /* Consistent width */
+  flex: 0 1 auto;              /* Prevent shrinking */
+}
+
+/* Numbers Styling */
+.api-stat h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Titles Styling */
+.api-stat p {
+  font-size: 1.4rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .api-stats-container {
+    gap: 2rem;               /* Adjust spacing for smaller screens */
+    overflow-x: auto;        /* Allow scrolling if it overflows */
+    flex-wrap: nowrap;       /* Keep items in a single row */
+  }
+
+  .api-stat {
+    min-width: 150px;        /* Adjust width for smaller screens */
+  }
+
+  .api-stat h2 {
+    font-size: 2.8rem;
+  }
+
+  .api-stat p {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* Overall Killing Trend - Step 2 */
+.step[data-step="2"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.highlight-text{
+  font-weight: bold;
+}
+
+
+.geographic-container {
+    max-width: 800px; /* Adjust width as needed */
+    margin: 0rem;
+    text-align: center; /* Ensures all text is aligned */
+}
+
+.geographic-container p {
+    text-align: center;
+    max-width: 900px; /* Ensures consistent width */
+    margin: 2rem; /* Centers the paragraph */
+}
+
+.geographic-container .highlight-text {
+    font-weight: bold;
+}
+
+
+.overall-killings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 100%;
+  padding: 3rem;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.step.is-active .overall-killings-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overall-killings-container .flourish-embed {
+  width: 100vw; /* Force full width */
+  max-width: 100%;
+  height: 80vh; /* Adjust height */
+}
+
+/* Interactive Map - Step 3 GEOGRAPHICAL CONTEXT */
+
+.step[data-step="3"] {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem;
+  margin-top: 20rem;
+  margin-bottom: 15rem;
+}
+
+.map-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 70vh;
+  z-index: 1;
+  opacity: 1;
+  justify-content: center;
+  margin-top: 0rem;
+  transition: opacity 3s ease-in-out;
+  padding-bottom: 6rem;
+}
+
+
+.map-text-box {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 8px;
+  opacity: 1;
+  transform: translateY(50px);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+  
+ .step[data-step="3"].is-active + .step .map-container {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+
+/* Scrollable Text Box */
+.text-box {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  margin: 20px auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Step 4 - Responsive Adjustments */
+@media (max-width: 768px) {
+  .step[data-step="4"] {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .overall-killings-container {
+    width: 100%;
+  }
+
+  .text-box-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .text-box {
+    width: 90%;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+
+  .map-container {
+    height: 60vh;
+  }
+
+  .map-text-box {
+    width: 90%;
+  }
+}
+
+/* Ensure Mobile Responsiveness */
+@media (max-width: 768px) {
+  .api-container {
+    width: 100%;
+    height: auto;
+    padding: 6rem;
+  }
+
+  .graph-container p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .overall-killings-container {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+/* Step 4: Race Offender & Victim Section */
+
+.step[data-step="4"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180vh; /* Adjust height */
+  padding: 6rem 3rem;
+  margin-top: 15rem;
+  z-index: 2;
+}
+
+/* Main Container Holding Offender & Victim Graphs */
+.race-offender-victim-container {
+  width: 70vw;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem auto;
+  margin-bottom: 0rem auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Individual Graphs */
+.race-visual {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0rem;
+  opacity: 0;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Ensure Images Fit */
+.race-chart-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Offender Chart & Text - Chart Right, Text Left */
+.offender-visual .race-text-box {
+  order: 1; /* Text appears on the left */
+  transform: translateX(-100px);
+}
+
+.offender-visual .race-chart-box {
+  order: 2; /* Chart appears on the right */
+  transform: translateX(100px);
+}
+
+/* Victim Chart & Text - Chart Left, Text Right */
+.victim-visual .race-chart-box {
+  order: 1; /* Chart appears on the left */
+  transform: translateX(-100px);
+}
+
+.victim-visual .race-text-box {
+  order: 2; /* Text appears on the right */
+  transform: translateX(100px);
+}
+
+/* Step 4 Becomes Active - Reveal All Elements */
+
+.step[data-step="4"].is-active .race-offender-victim-container {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Animate Offender Chart & Text */
+.step[data-step="4"].is-active .offender-visual {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step[data-step="4"].is-active .offender-visual .race-text-box {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.step[data-step="4"].is-active .offender-visual .race-chart-box {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animate Victim Chart & Text */
+.step[data-step="4"].is-active .victim-visual {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step[data-step="4"].is-active .victim-visual .race-text-box {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.step[data-step="4"].is-active .victim-visual .race-chart-box {
+  float:left;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .race-visual {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .race-text-box,
+  .race-chart-box {
+    width: 90%;
+    text-align: center;
+    transform: translateX(0) !important;
+  }
+
+  .race-chart-img {
+    max-width: 100%;
+  }
+}
+
+
+/* Step 5: Overall Killings by Race */
+.step[data-step="5"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw !important; /* Forces full width */
+  max-width: 100vw !important;
+  padding: 6rem 3rem;
+  margin-top: 8rem; /* Ensures Step 5 doesn't overlap Step 4 */
+  z-index: 2;
+}
+
+/* Ensure Overall Killings by Race Container is Styled */
+.overall-killings-race-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 100%;
+  padding: 3rem;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+
+/* Optional: Limit the width for better readability */
+.step[data-step="5"] p {
+  max-width: 900px;     /* Restricts paragraph width */
+  margin: 0 auto;       /* Centers the paragraph within the container */
+  text-align: center;  /* Centers the text horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures content aligns centrally */
+  justify-content: center; 
+  padding: 2rem;/* Improves readability */
+}
+
+.step[data-step="5"] h2 {
+  margin-bottom: 1rem;  /* Adds spacing between heading and text */
+}
+
+
+
+/* Ensure the Flourish Embed Expands */
+.overall-killings-race-container .flourish-embed {
+  flex: 1;
+  max-width: 55% !important; /* Ensure it's wider */
+  height: 100vh; /* Adjust height */
+}
+
+/* When Step 5 is active, show the chart */
+.step[data-step="5"].is-active .overall-killings-text{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .overall-killings-race-container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 1rem;
+  }
+}
+
+
+  
+/* Step 6: Offender Outcome by Race */
+.step[data-step="6"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 5rem 3rem;
+  margin-top: 10rem;
+}
+
+/* Wrapper to Hold Graph + Text */
+.offender-outcome-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  max-width: 1200px;
+  margin-top: 2rem;
+  padding: 3rem;
+  opacity: 1; /* Ensure it's visible */
+  transform: translateY(0); /* Ensure it's correctly positioned */
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Ensure Graph Appears First */
+.offender-outcome-container {
+  flex: 1;
+  opacity: 1; /* Ensure graph is visible */
+  transform: translateX(0);
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Ensure Image Fits */
+.race-chart-box img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Explanation Box (Initially Hidden) */
+.offender-outcome-text {
+  flex: 1;
+  color: black;
+  padding: 2rem;
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin-left: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  opacity: 1;
+  transform: translateX(100px);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Move Graph to the Left when Step 6 is Active */
+.step[data-step="6"].is-active .offender-outcome-container {
+  transform: translateX(-100px);
+}
+
+/* Show Text on Scroll */
+.step[data-step="6"].is-active .offender-outcome-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .offender-outcome-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .offender-outcome-container {
+    width: 100%;
+    transform: translateX(0) !important;
+  }
+
+  .offender-outcome-text {
+    width: 90%;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    transform: translateX(0) !important;
+  }
+}
+
+/* Step 7: Conclusion */
+
+.step[data-step="7"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    background: #B4CDED; /* Light background */
+    padding: 6rem 3rem;
+    margin-top: 10vh; /* Extra space to prevent overlap */
+    position: relative;
+}
+
+/* Ensure Full Background on Mobile */
+@media (max-width: 768px) {
+    .step[data-step="7"] {
+        min-height: 60rem;
+        width: 100vw;
+        padding-bottom: 5rem;
+    }
+}
+
+/* Conclusion Heading (Prevent Overlap) */
+.step[data-step="7"] h2 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Conclusion Text Styling */
+.conclusion-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Reveal Conclusion Text when Step 7 is Active */
+.step[data-step="7"].is-active .conclusion-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Prevent Overlap with Previous Step */
+.step[data-step="7"]:before {
+    content: "";
+    position: absolute;
+    top: -5vh; /* Push it down */
+    left: 0;
+    width: 100%;
+    height: 5vh;
+    background: #f4f4f4;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .conclusion-text {
+        font-size: 1.1rem;
+        width: 90%;
+    }
+}
